@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador AR - Bolsa</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body { margin: 0; background-color: #f5f5f5; font-family: sans-serif; }
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            background-color: #eee;
+        }
+        #ar-button {
+            background-color: #007AFF;
+            color: white;
+            border-radius: 30px;
+            border: none;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <model-viewer 
+        src="AR_Bolsa.glb" 
+        ios-src="AR_Bolsa.usdz" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        shadow-intensity="1" 
+        exposure="1"
+        auto-rotate
+        alt="Modelo 3D AR_Bolsa">
+        
+        <button slot="ar-button" id="ar-button">
+            🚀 VER EN TU ESPACIO
+        </button>
+        
+    </model-viewer>
+
+</body>
+</html>
